@@ -872,6 +872,11 @@
 
 
 //please submit any correction to this list.
+#if defined(ICM20689)
+  #define MPU6050
+  #define MPU6050_ADDRESS     0x69
+#endif
+
 #if defined(FFIMUv1)
   #define ITG3200
   #define BMA180
@@ -1668,7 +1673,7 @@
 /***************              Sensor Type definitions              ********************/
 /**************************************************************************************/
 
-#if defined(ADXL345) || defined(BMA020) || defined(BMA180) || defined(BMA280) || defined(MMA7455) || defined(ADCACC) || defined(LIS3LV02) || defined(LSM303DLx_ACC) || defined(MPU6050) || defined(LSM330) || defined(MMA8451Q)
+#if defined(ADXL345) || defined(BMA020) || defined(BMA180) || defined(BMA280) || defined(MMA7455) || defined(ADCACC) || defined(LIS3LV02) || defined(LSM303DLx_ACC) || defined(MPU6050) || defined(LSM330) || defined(MMA8451Q) || defined(ICM20689)
   #define ACC 1
 #else
   #define ACC 0
@@ -1680,7 +1685,7 @@
   #define MAG 0
 #endif
 
-#if defined(ITG3200) || defined(ITG3050) || defined(L3G4200D) || defined(MPU6050) || defined(LSM330) || defined(MPU3050) || defined(WMP)
+#if defined(ITG3200) || defined(ITG3050) || defined(L3G4200D) || defined(MPU6050) || defined(LSM330) || defined(MPU3050) || defined(WMP) || defined(ICM20689)
   #define GYRO 1
 #else
   #define GYRO 0

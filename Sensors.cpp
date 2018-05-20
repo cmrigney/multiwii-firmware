@@ -1145,9 +1145,9 @@ void Device_Mag_getADC() {
 #endif
 
 // ************************************************************************************************************
-// I2C Gyroscope and Accelerometer MPU6050
+// I2C Gyroscope and Accelerometer MPU6050 or ICM20689
 // ************************************************************************************************************
-#if defined(MPU6050)
+#if defined(MPU6050) || defined(ICM20689)
 #if !defined(MPU6050_ADDRESS)
   #define MPU6050_ADDRESS     0x68 // address pin AD0 low (GND), default for FreeIMU v0.4 and InvenSense evaluation board
   //#define MPU6050_ADDRESS     0x69 // address pin AD0 high (VCC)
