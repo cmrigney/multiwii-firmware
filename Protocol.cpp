@@ -239,6 +239,7 @@ void serialCom() {
         if (GPS_SERIAL == port) {
           static uint32_t GPS_last_frame_seen; //Last gps frame seen at this time, used to detect stalled gps communication
           if (GPS_newFrame(c)) {
+            LEDPIN_ON;
             //We had a valid GPS data frame, so signal task scheduler to switch to compute
             if (GPS_update == 1) GPS_update = 0; else GPS_update = 1; //Blink GPS update
             GPS_last_frame_seen = timeMax;
